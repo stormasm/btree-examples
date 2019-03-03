@@ -42,3 +42,7 @@ Send your patches / merge-requests only if you are ready to release your changes
 to public domain.
 
 The viz.js is licensed under https://github.com/mdaines/viz.js/blob/master/COPYING
+
+##### Notes
+
+**btree1.go** is pretty much the original code with slight modifications
