@@ -9,4 +9,6 @@ https://godoc.org/github.com/google/btree
 
 https://github.com/mdaines/viz.js/
 
+https://graphviz.gitlab.io/documentation/
+
 https://www.graphviz.org/pdf/dotguide.pdf
