@@ -1,3 +1,8 @@
+
+##### Version 1.8.1 is working...
+
+https://github.com/mdaines/viz.js/releases/tag/v1.8.1
+
 #B Tree
 
 B Trees are arguably the most important datastructure in the computer storage
@@ -15,8 +20,8 @@ contribution from Computer Science to Mathematics.
 
 I have implemented this Go program mainly as a teaching aid to cover the
 original version of the B Tree. Most of the online visualization projects
-cover the Knuth variant and not the original version.  On hindsight, 
-I believe that I should have implemented this in Javascript and contributed 
+cover the Knuth variant and not the original version.  On hindsight,
+I believe that I should have implemented this in Javascript and contributed
 to the tree visualization project maintained by David Galles from
 the University of San Francisco [http://www.cs.usfca.edu/~galles/visualization/]
 
