@@ -83,9 +83,9 @@ func Insert(btree *bTree, x int) *bTree {
 
 a:
 	for i, val := range active.elements {
-		// fmt.Printf("Comparing %d against %d\n", x, val)
+		fmt.Printf("Comparing %d against %d\n", x, val)
 		if val == x {
-			// fmt.Printf("[%d] Already existing in the btree\n", x)
+			fmt.Printf("[%d] Already existing in the btree\n", x)
 			return btree
 		} else if val > x {
 			if len(active.children) > i {
@@ -125,8 +125,8 @@ b:
 		}
 
 		if active.parent == nil {
-			// fmt.Println("Overflow in the btree root node. Should split the node")
-			// fmt.Println(btree.root)
+			fmt.Println("Overflow in the btree root node. Should split the node")
+			fmt.Println(btree.root)
 			/* root node */
 			newRootNode := &bTreeNode{}
 			newRootNode.elements = make([]int, 0, 2*btree.order+1)
@@ -149,7 +149,7 @@ b:
 		} else {
 			var pos, val int
 
-			// fmt.Println("Overflow in non-root node of the b-tree")
+			fmt.Println("Overflow in non-root node of the b-tree")
 
 			parent := active.parent
 			/* Get the mid element */
@@ -228,9 +228,6 @@ func PrintbTree(btree *bTree, dumpStringPrefix string) *treeRenderer {
 	outputString += ("\"]\n")
 	generateDotNotationForBTree(btree.root, ch, <-ch, &outputString)
 	outputString += ("}\n")
-
-	fmt.Println(outputString);
-
 	quit <- 1
 
 	//go counter(ch, quit)
@@ -238,10 +235,6 @@ func PrintbTree(btree *bTree, dumpStringPrefix string) *treeRenderer {
 	outputString = dumpStringPrefix + "\n"
 	generateTextDumpOfBTree(btree.root, &outputString)
 	renderer.Elements = outputString
-
-	// fmt.Println("\nrenderer.Elements")
-	// fmt.Println(outputString);
-
 	//quit <- 1
 
 	return &renderer
@@ -304,10 +297,10 @@ func Delete(btree *bTree, x int) *bTree {
 
 a:
 	for i, val = range active.elements {
-		// fmt.Printf("Comparing %d against %d\n", x, val)
+		fmt.Printf("Comparing %d against %d\n", x, val)
 		if val == x {
 			found = true
-			// fmt.Printf("Found [%d] in the btree at position [%d]\n", x, i)
+			fmt.Printf("Found [%d] in the btree at position [%d]\n", x, i)
 			break
 		} else if val > x {
 			if len(active.children) > i {
@@ -373,9 +366,9 @@ a:
 
 	checkunderflow:
 
-		// fmt.Printf("active is %d-th/rd child of its parent\n", childNumber)
+		fmt.Printf("active is %d-th/rd child of its parent\n", childNumber)
 		if len(active.elements) < btree.order {
-			// fmt.Println("Underflow in the node due to the deletion")
+			fmt.Println("Underflow in the node due to the deletion")
 			/* Underflow in the leaf node */
 			var neighbor *bTreeNode
 			var allElements []int
@@ -523,7 +516,7 @@ func treeOperations(w http.ResponseWriter, r *http.Request) {
 		 * during the response of the POST (the above block) */
 		if btree == nil {
 			btree, _ = InitializebTree(3)
-			// fmt.Println("Initializing the btree")
+			fmt.Println("Initializing the btree")
 /*
 			for _, v := range []int{6, 1, 3, 10, 4, 7, 8, 9, 18, 12, 13,
 				19, 15, 22, 33, 35, 44, 70, 37, 38, 39, 50, 60, 55, 80,
