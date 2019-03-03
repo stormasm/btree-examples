@@ -10,7 +10,7 @@ import (
 	"flag"
 )
 
-var btreeDegree = flag.Int("degree", 32, "B-Tree degree")
+var btreeDegree = flag.Int("degree", 3, "B-Tree degree")
 
 func main() {
 	tr := btree.New(*btreeDegree)
@@ -19,13 +19,12 @@ func main() {
 	}
 
 	fmt.Println("len:       ", tr.Len())
-	fmt.Println("len:       ", tr.Len())
+	fmt.Println("get2:      ", tr.Get(btree.Int(2)))
 	fmt.Println("get3:      ", tr.Get(btree.Int(3)))
-	fmt.Println("get100:    ", tr.Get(btree.Int(100)))
-	fmt.Println("del4:      ", tr.Delete(btree.Int(4)))
-	fmt.Println("del100:    ", tr.Delete(btree.Int(100)))
+	fmt.Println("del7:      ", tr.Delete(btree.Int(7)))
+	fmt.Println("del8:      ", tr.Delete(btree.Int(8)))
+	fmt.Println("replace4:  ", tr.ReplaceOrInsert(btree.Int(4)))
 	fmt.Println("replace5:  ", tr.ReplaceOrInsert(btree.Int(5)))
-	fmt.Println("replace100:", tr.ReplaceOrInsert(btree.Int(100)))
 	fmt.Println("min:       ", tr.Min())
 	fmt.Println("delmin:    ", tr.DeleteMin())
 	fmt.Println("max:       ", tr.Max())
