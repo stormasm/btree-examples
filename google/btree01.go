@@ -1,3 +1,7 @@
+/*
+https://forum.golangbridge.org/t/how-to-use-github-com-google-btree/4086
+*/
+
 package main
 
 import (
